@@ -28,7 +28,7 @@ def with_files(files):
     """Executes when file(s) is/are specified."""
     try:
         # Read each file's contents and store them
-        file_contents = [contents for contents in [open(file).read() for file in files]]
+        file_contents = [open(file).read() for file in files]
     except OSError as err:
         # This executes when there's an error (e.g. FileNotFoundError)
         exit(print(f"cat: error reading files ({err})"))
